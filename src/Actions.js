@@ -1,34 +1,41 @@
 export default {
     fruit: (value) => {
-        if (value == 'banana') {
-            return [{
-                name: 'drink',
-                value: 'cider'
-            }, {
-                name: 'food',
-                value: 'sandwich'
-            }]
+        if (value === 'banana') {
+            return ([{
+              name: 'drink',
+              method: 'block',
+              values: ['cider']
+            },{
+              name: 'food',
+              method: 'reduce',
+              values: ['sandwich', 'cake']
+            }]);
         }
-
         return [{
-            name: 'drink',
-            value: 'beer'
-        }]
+          name: 'drink',
+          method: 'block',
+          values: ['beer']
+        }];
     },
     drink: (value) => {
-        if (value == 'beer') {
+        if (value === 'beer') {
             return [{
-                name: 'food',
-                value: 'hamburguer'
+              name: 'food',
+              method: 'reduce',
+              values: ['sandwich']
             }]
         }
-        else if (value == 'barley') {
+        else if (value === 'barley') {
             return [{
                 name: 'food',
-                value: 'cake'
+                method: 'block',
+                values: ['cake']
             }]
         }
-
-        return null;
+        return [{
+          name: 'food',
+          method: 'add',
+          values: [{ value: 'pie', description: 'Pie'}, { value: 'pizza', description: 'Pizza'}]
+      }];
     }
 };

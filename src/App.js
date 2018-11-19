@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Dropdown from './Dropdown';
-import Manager from './Manager';
+import Context from './Context';
 import Configuration from './Configuration';
 
-const manager = new Manager();
+const context = new Context();
 
 class App extends Component {
-formatConfig = config => [<Dropdown manager={manager} {...config} />,  <br />, <br />, <br />]
+formatConfig = config => [<Dropdown context={context} {...config} />,  <br />, <br />, <br />]
 
   render() {
     return (
